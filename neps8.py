@@ -36,7 +36,7 @@ while True:
         print(f'ERROR: {e}')
 
     if not isinstance(student_name, str):
-        raise TypeError('NO NOME VOCE NAO DIGITOU UMA PALAVRA')
+        raise TypeError('IN THE NAME YOU DIDNOT TYPE A WORD')
     else:
         os.system('cls')
         validate_and_add_candidate(
