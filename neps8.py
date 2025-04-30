@@ -5,7 +5,7 @@ candidates = []
 
 def validate_and_add_candidate(name, age, courses):
     if int(age) >= 18 and int(courses) >= 5:
-        print('Eligible')
+        print(f'{name} was Elected!!')
         candidates.append({
             'name':name,
             'age':age,
@@ -28,15 +28,18 @@ while True:
     if sair.lower() == 'yes' or sair.lower() == 'sim':
         break
 
-    student_name = str(input('enter the student name, here: '))
+    student_name = (input('enter the student name, here: '))
+    student_age = (input('enter the student age, here: '))
+    number_of_courses = (input('enter the number of courses, here: '))
+    
     try:
-        student_age = int(input('enter the student age, here: '))
-        number_of_courses = int(input('enter the number of courses, here: '))
+        student_age.isdigit() == True
+        number_of_courses.isdigit() == True
     except ValueError as e:
-        print(f'ERROR: {e}')
+        print(f'ONLY NUMBERS PLEASE: {e}')
 
-    if not isinstance(student_name, str):
-        raise TypeError('IN THE NAME YOU DIDNOT TYPE A WORD')
+    if student_name.isdigit() == True:
+        print(f'IN THE NAME INPUT YOU DID NOT TYPE A WORD  ')
     else:
         os.system('cls')
         validate_and_add_candidate(
